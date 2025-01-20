@@ -16,6 +16,9 @@ from enums import *
 from utility import download_file, get_all_symbols, get_parser, get_start_end_date_objects, convert_to_date_object, \
   get_path
 
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 def download_monthly_aggTrades(trading_type, symbols, num_symbols, years, months, start_date, end_date, folder, checksum):
   current = 0
